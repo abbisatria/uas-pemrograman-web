@@ -1,0 +1,165 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial;
+    background:#f4f4f4;
+    padding:30px;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+}
+
+.card{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    margin-bottom:20px;
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+.form-group{
+    display:flex;
+    flex-direction:column;
+}
+
+.form-group label{
+    margin-bottom:6px;
+    font-weight:bold;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:6px;
+    font-size:14px;
+}
+
+.full-width{
+    grid-column:1 / 3;
+}
+
+.button-group{
+    margin-top:20px;
+    display:flex;
+    gap:10px;
+}
+
+.button-group button{
+    padding:10px 20px;
+}
+
+@media(max-width:768px){
+
+    .form-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .full-width{
+
+        grid-column:auto;
+
+    }
+
+}
+
+label{
+    display:block;
+    margin-bottom:5px;
+}
+
+input,
+select,
+textarea{
+    width:100%;
+    padding:10px;
+}
+
+button{
+    padding:10px 20px;
+    cursor:pointer;
+}
+
+.dashboard{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+    margin-bottom:20px;
+}
+
+.box{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    text-align:center;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+}
+
+th,td{
+    border:1px solid #ddd;
+    padding:10px;
+    text-align:center;
+}
+
+th{
+    background:#0d6efd;
+    color:white;
+}
+
+/* Tombol aksi */
+.btn-proses {
+    background: #2e7d32;
+    margin-right: 5px;
+}
+
+.btn-proses:hover {
+    background: #1b5e20;
+}
+
+.btn-hapus {
+    background: #d32f2f;
+}
+
+.btn-hapus:hover {
+    background: #b71c1c;
+}
+
+/* Status */
+.status-menunggu {
+    color: #ef6c00;
+    font-weight: bold;
+}
+
+.status-dipanggil {
+    color: #1565c0;
+    font-weight: bold;
+}
+
+.status-selesai {
+    color: #2e7d32;
+    font-weight: bold;
+}

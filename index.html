@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>UAS Pemrograman Web</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+
+    <h1 class="title">Sistem Antrean Klinik</h1>
+
+    <div class="container">
+        <div class="card">
+            <h2>Form Pendaftaran Pasien</h2>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label>Nama Pasien</label>
+                    <input type="text" id="nama" placeholder="Masukkan nama pasien">
+                </div>
+
+                <div class="form-group">
+                    <label>Jenis Kelamin</label>
+                    <select id="jk">
+                        <option value="">Pilih</option>
+                        <option>Laki-laki</option>
+                        <option>Perempuan</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Poli</label>
+                    <select id="poli">
+                        <option value="">Pilih Poli</option>
+                        <option>Umum</option>
+                        <option>Gigi</option>
+                        <option>Anak</option>
+                        <option>Penyakit Dalam</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Dokter</label>
+                    <select id="dokter">
+                        <option value="">Pilih Dokter</option>
+                        <option>dr. Andi</option>
+                        <option>dr. Budi</option>
+                        <option>dr. Citra</option>
+                        <option>dr. Dewi</option>
+                    </select>
+                </div>
+
+                <div class="form-group full-width">
+                    <label>Keluhan</label>
+                    <textarea id="keluhan" rows="4" placeholder="Masukkan keluhan pasien"></textarea>
+                </div>
+            </div>
+
+            <div class="button-group">
+                <button onclick="simpanPasien()">Simpan Pasien</button>
+                <button onclick="resetForm()">Reset</button>
+            </div>
+        </div>
+
+        <div class="dashboard">
+            <div class="box">
+                <h3>Total Pasien</h3>
+                <h2 id="totalPasien">0</h2>
+            </div>
+
+            <div class="box">
+                <h3>Menunggu</h3>
+                <h2 id="menunggu">0</h2>
+            </div>
+
+            <div class="box">
+                <h3>Dipanggil</h3>
+                <h2 id="dipanggil">0</h2>
+            </div>
+
+            <div class="box">
+                <h3>Selesai</h3>
+                <h2 id="selesai">0</h2>
+            </div>
+
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Nama</th>
+                    <th>Jenis Kelamin</th>
+                    <th>Poli</th>
+                    <th>Dokter</th>
+                    <th>Keluhan</th>
+                    <th>Status</th>
+                    <th>Aksi</th>
+
+                </tr>
+            </thead>
+
+            <tbody id="tbody">
+                <tr>
+                    <td>1</td>
+                    <td>Andi Saputra</td>
+                    <td>Laki-laki</td>
+                    <td>Umum</td>
+                    <td>dr. Andi</td>
+                    <td>Demam</td>
+                    <td>
+                        <span class="status-menunggu">
+                            Menunggu
+                        </span>
+                    </td>
+                    <td>
+                        <button class="btn-update">Update</button>
+                        <button class="btn-proses">Panggil</button>
+                        <button class="btn-hapus">Hapus</button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>2</td>
+                    <td>Siti Nurhaliza</td>
+                    <td>Perempuan</td>
+                    <td>Gigi</td>
+                    <td>dr. Budi</td>
+                    <td>Sakit gigi</td>
+                    <td>
+                        <span class="status-dipanggil">
+                            Dipanggil
+                        </span>
+                    </td>
+                    <td>
+                        <button class="btn-proses">Selesai</button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>3</td>
+                    <td>Budi Santoso</td>
+                    <td>Laki-laki</td>
+                    <td>Penyakit Dalam</td>
+                    <td>dr. Dewi</td>
+                    <td>BAB terus</td>
+                    <td>
+                        <span class="status-selesai">
+                            Selesai
+                        </span>
+                    </td>
+                    <td>
+                        <em>-</em>
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <script>
+        /*
+=================================================
+UAS Pemrograman Web
+Sistem Antrean Klinik
+Lengkapi seluruh fungsi berikut.
+=================================================
+*/
+
+        let pasien = [];
+
+        let editIndex = -1;
+
+
+        /*
+        ======================================
+        SOAL 1
+        
+        Lengkapi fungsi simpanPasien()
+        
+        Ketentuan:
+        
+        - Ambil seluruh data dari form
+        - Validasi seluruh input
+        - Jika editIndex == -1 maka tambah data
+        - Jika editIndex != -1 maka update data
+        - Simpan ke LocalStorage
+        - Reset Form
+        ======================================
+        */
+        function simpanPasien() {
+
+
+
+        }
+
+
+
+        /*
+        ======================================
+        SOAL 2
+        
+        Lengkapi fungsi tampilkanData()
+        
+        Ketentuan:
+        
+        - Menampilkan seluruh pasien ke tabel
+        - Nomor otomatis
+        - Tombol Update hanya muncul jika status Menunggu
+        - Tombol Hapus hanya muncul jika status Menunggu
+        - Tombol Panggil hanya muncul jika status Menunggu
+        - Tombol Selesai hanya muncul jika status Dipanggil
+        ======================================
+        */
+        function tampilkanData() {
+
+
+
+        }
+
+
+
+        /*
+        ======================================
+        SOAL 3
+        
+        Lengkapi fungsi ubahStatus(index)
+        
+        Aturan
+        
+        Menunggu
+        
+        ↓
+        
+        Dipanggil
+        
+        ↓
+        
+        Selesai
+        
+        Simpan perubahan ke LocalStorage
+        ======================================
+        */
+        function ubahStatus(index) {
+
+
+
+        }
+
+
+
+        /*
+        ======================================
+        SOAL 4
+        
+        Lengkapi fungsi editPasien(index)
+        
+        Ketentuan
+        
+        - Isi form menggunakan data pasien
+        - editIndex diisi index data
+        ======================================
+        */
+        function editPasien(index) {
+
+
+
+        }
+
+
+
+        /*
+        ======================================
+        SOAL 5
+        
+        Lengkapi fungsi hapusPasien(index)
+        
+        Ketentuan
+        
+        - Hapus data
+        - Update LocalStorage
+        ======================================
+        */
+        function hapusPasien(index) {
+
+
+
+        }
+
+
+
+        /*
+        ======================================
+        SOAL 6
+        
+        Lengkapi fungsi updateDashboard()
+        
+        Menampilkan
+        
+        Total Pasien
+        
+        Menunggu
+        
+        Dipanggil
+        
+        Selesai
+        ======================================
+        */
+        function updateDashboard() {
+
+
+
+        }
+
+
+
+        /*
+        ======================================
+        SOAL 7
+        
+        Lengkapi fungsi resetForm()
+        
+        Kosongkan seluruh input
+        ======================================
+        */
+        function resetForm() {
+
+
+
+        }
+
+
+
+        /*
+        ======================================
+        SOAL 8
+        
+        Lengkapi fungsi loadData()
+        
+        Ketentuan
+        
+        - Ambil data dari LocalStorage
+        - Jika ada tampilkan
+        ======================================
+        */
+        function loadData() {
+
+
+
+        }
+
+
+
+        /*
+        ======================================
+        BONUS
+        
+        Lengkapi fitur pencarian pasien
+        
+        Input id="cari"
+        
+        ======================================
+        */
+
+
+
+
+
+        /*
+        ======================================
+        BONUS
+        
+        Lengkapi filter berdasarkan poli
+        
+        ======================================
+        */
+
+
+
+
+
+
+        loadData();
+    </script>
+
+</body>
+
+</html>
